@@ -32,14 +32,14 @@ Some  ‘Area’ column are empty. When area+phone operation is done it gives nu
 Dataframe techniques to spot these rows using “startswith & replace” feature did not work and going line by line and using if statement for empty area field also did not work. Finally, the below piece of code solved the problem. It is finding the rows with empty area data, storing them in a separate dataframe and deleting these rows from db_df and after formatting empty_area_df then appending to db_df.
 13.	Csv Phone address that is not present in the database is added to a phone_dataframe. These phones will be updated in the database later.
 For physical address comparison:
-_Logic 1:_
+Logic 1:
 if the number of lines matching EID is more than 1, create a df to put those many rows, "rows" while rows >0 and 
  break the loop if the addr comparison for that loop yields token_set_ratio > 83
 If zipcode differs, state or city or house inside same city might be different
 If zipcode is same, compare address line 1 and line 2
 if zipcode is not given, compare city or state before address comparison
 
-_Logic2:	_
+Logic 2:
 Levenstein Distance helped very well. Just the street address line 1 is enough.
 Fuzzywuzzy tool is so helpful. Of the many tokens (like partial token, token sort ratio), token set ratio perfectly fits the need. This helped to find the matching address and keep adding to the addr_dataframe with records with new address that is not in the database. Logic 2 is very light, easy and fast than the logic 1.
 
