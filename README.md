@@ -1,7 +1,7 @@
-# DataScience
+# Data Science
 Problem:
+--------
 Compare and find the difference between huge data file(csv)(contains latest data) and database data (not up-to-date) and update the database with new info from csv file.
-
 Oracle database - has millions of records of the people who belong and who belonged to the Institutions. 
 Various details of the people are there. This work revolves around the contact information like email, phone and address.
 Many a times we get large csv files with current details of people. The csv files would have records between 1000 to 500000.
@@ -10,8 +10,10 @@ For every record there is an unique identifier- ID
 Database data are old and data from csv are new.
 
 Solution:
-Software used: Python 3.6, Anaconda, Jupiter Notes
-Libraries used: numpy, panda, matplotlib, fuzzywuzzy, cx_Oracle
+---------
+_Software used: Python 3.6, Anaconda, Jupiter Notes
+Libraries used: numpy, panda, matplotlib, fuzzywuzzy, cx_Oracle_
+
 The programs step by step procedure:
 1.	The csv input data is passed to the panda dataframe and needed columns are retained, duplicate rows and empty Eid rows are removed.
 2.	This csv dataframe is further narrowed down by few operations. Finally just the unique identifier and one contact data is retained. 
@@ -32,6 +34,7 @@ Dataframe techniques to spot these rows using “startswith & replace” feature
 Csv Phone address that is not present in the database is added to a phone_dataframe. These phones will be updated in the database later.
 For physical address comparison:
 Logic 1:
+--------
 if the number of lines matching EID is more than 1, create a df to put those many rows, "rows" while rows >0 and 
  break the loop if the addr comparison for that loop yields token_set_ratio > 83
 If zipcode differs, state or city or house inside same city might be different
@@ -39,13 +42,13 @@ If zipcode is same, compare address line 1 and line 2
 if zipcode is not given, compare city or state before address comparison
 
 Logic2:	
+-------
 Levenstein Distance helped very well. Just the street address line 1 is enough.
 Fuzzywuzzy tool is so helpful. Of the many tokens (like partial token, token sort ratio), token set ratio perfectly fits the need. This helped to find the matching address and keep adding to the addr_dataframe with records with new address that is not in the database. Logic 2 is very light, easy and fast than the logic 1.
 
 14.	Matplotlib is used to show how many records have new address from the total csv records.
 15.	All the dataframes that has new phone/email/address are merged in pandas dataframe like sql outer join merge.
 16.	More visualization is also done by venn diagram
-
 
 Output files programmatically sorted to make the data entry easy:
 Data Visualization in Python
@@ -62,6 +65,7 @@ Phone	1XXXX
 Total Changes	3XXXX
 
 The code that I have uploaded is rewritten instead of uploading the original. In this program, i have used fake data as input and also its a small file. This have reduced many lines of code which was written to handle the scalability for big-data. Not only the lines of code, but also the number of programs used. What was originally 4 separate programs is made into one here. For real data and huge data we cant use this single file, it needs to be 4 separate py scripts. Also, I have included the code that connects to the data base but for time-being I am importing database data from excel file.
+
 Please free to download this folder and see the results by running the program.
 
 Files: Input files - FakeContact.csv and db_data
