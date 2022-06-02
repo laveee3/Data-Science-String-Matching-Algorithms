@@ -30,19 +30,15 @@ Csv Email address that is not present in the database is added to a email_datafr
 12.	Data unification/cleaning for the phone numbers present in both database and csv is done. Phone numbers comes in different format, it could be continuous number or it could brackets around area code or ‘-‘between area codes and rest of the numbers. Each phone address in csv file is compared one or more phone address present in the database for the relevant EID.  Phones from the dataframe is split into two columns Area and Phone. So, we join Area+phone to get the 10 digit number in a format that matches the format we reached in csv file input data formatting. 
 Some  ‘Area’ column are empty. When area+phone operation is done it gives number like this None1234567890. In this case, even a matching number is thrown as new number. Though it looked simple, to spot empty firld in Area but it took long time figure ot. 
 Dataframe techniques to spot these rows using “startswith & replace” feature did not work and going line by line and using if statement for empty area field also did not work. Finally, the below piece of code solved the problem. It is finding the rows with empty area data, storing them in a separate dataframe and deleting these rows from db_df and after formatting empty_area_df then appending to db_df.
-13.	
-Csv Phone address that is not present in the database is added to a phone_dataframe. These phones will be updated in the database later.
+13.	Csv Phone address that is not present in the database is added to a phone_dataframe. These phones will be updated in the database later.
 For physical address comparison:
-Logic 1:
---------
+_Logic 1:_
 if the number of lines matching EID is more than 1, create a df to put those many rows, "rows" while rows >0 and 
  break the loop if the addr comparison for that loop yields token_set_ratio > 83
 If zipcode differs, state or city or house inside same city might be different
 If zipcode is same, compare address line 1 and line 2
 if zipcode is not given, compare city or state before address comparison
-
-Logic2:	
--------
+_Logic2:	_
 Levenstein Distance helped very well. Just the street address line 1 is enough.
 Fuzzywuzzy tool is so helpful. Of the many tokens (like partial token, token sort ratio), token set ratio perfectly fits the need. This helped to find the matching address and keep adding to the addr_dataframe with records with new address that is not in the database. Logic 2 is very light, easy and fast than the logic 1.
 
