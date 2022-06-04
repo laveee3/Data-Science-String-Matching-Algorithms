@@ -14,7 +14,7 @@ Solution:
 Software used: Python 3.6, Anaconda, Jupyter Notes
 
 Libraries used: numpy, panda, matplotlib, fuzzywuzzy, cx_Oracle
---
+
 
 
 The programs step by step procedure:
