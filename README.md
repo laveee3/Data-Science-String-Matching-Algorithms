@@ -11,8 +11,9 @@ Database data are old and data from csv are new.
 
 Solution:
 ---------
-_Software used: Python 3.6, Anaconda, Jupiter Notes
+Software used: Python 3.6, Anaconda, Jupyter Notes
 Libraries used: numpy, panda, matplotlib, fuzzywuzzy, cx_Oracle_
+----
 
 The programs step by step procedure:
 1.	The csv input data is passed to the panda dataframe and needed columns are retained, duplicate rows and empty Eid rows are removed.
