@@ -75,20 +75,20 @@ The goal is to **identify outdated contact information in the database** and upd
 
 ## 📂 Repository Structure
 Data-Science-String-Matching-Algorithms/
-│
+
 ├── input/
 │ ├── FakeContact.csv # Sample input CSV
 │ └── db_data.xlsx # Sample database data (Excel)
-│
+
 ├── notebooks/
 │ └── DS_fuzzyLogic_Visualization.ipynb # Main notebook
-│
+
 ├── scripts/
 │ └── split_csv.py # Utility for splitting large CSVs
-│
+
 ├── output/
 │ └── Updated_Contacts.xlsx
-│
+
 ├── FakeContact_Generator.py # Generates fake CSV data
 └── README.md
 
