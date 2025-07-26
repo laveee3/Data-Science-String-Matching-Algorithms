@@ -1,4 +1,4 @@
-# 🔍 Data Science: String Matching Algorithms for Data Synchronization
+#  Data Science: String Matching Algorithms for Data Synchronization
 
 This project focuses on **string matching and data cleaning techniques** to synchronize contact information (email, phone, and address) between large CSV files and an Oracle database containing millions of records.  
 
@@ -6,7 +6,7 @@ The goal is to **identify outdated contact information in the database** and upd
 
 ---
 
-## 📌 Problem Statement
+##  Problem Statement
 
 - The Oracle database contains old and incomplete data of individuals associated with various institutions.  
 - CSV files (ranging from **1,000 to 500,000 records**) contain updated contact information.  
@@ -15,7 +15,7 @@ The goal is to **identify outdated contact information in the database** and upd
 
 ---
 
-## ✅ Solution Approach
+##  Solution Approach
 
 ### **Tools & Libraries**
 - **Python 3.6**, **Anaconda**, **Jupyter Notebook**
@@ -54,7 +54,7 @@ The goal is to **identify outdated contact information in the database** and upd
 
 ---
 
-## 🧪 String Matching Algorithms Used
+##  String Matching Algorithms Used
 
 - **Exact string comparison:** Emails  
 - **Regex-based formatting:** Phone numbers  
@@ -73,7 +73,7 @@ The goal is to **identify outdated contact information in the database** and upd
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 Data-Science-String-Matching-Algorithms/
 
 ├── input/
